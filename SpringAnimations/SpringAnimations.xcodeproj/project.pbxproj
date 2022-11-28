@@ -13,6 +13,7 @@
 		CA2A6FEC2930DF42006D8CD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA2A6FEA2930DF42006D8CD7 /* Main.storyboard */; };
 		CA2A6FEE2930DF43006D8CD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA2A6FED2930DF43006D8CD7 /* Assets.xcassets */; };
 		CA2A6FF12930DF43006D8CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA2A6FEF2930DF43006D8CD7 /* LaunchScreen.storyboard */; };
+		CA9A9F4C2935368600FC22EA /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CA9A9F4B2935368600FC22EA /* Hero */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA9A9F4C2935368600FC22EA /* Hero in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = SpringAnimations;
+			packageProductDependencies = (
+				CA9A9F4B2935368600FC22EA /* Hero */,
+			);
 			productName = SpringAnimations;
 			productReference = CA2A6FE12930DF42006D8CD7 /* SpringAnimations.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = CA2A6FD82930DF42006D8CD7;
+			packageReferences = (
+				CA9A9F4A2935368600FC22EA /* XCRemoteSwiftPackageReference "Hero" */,
+			);
 			productRefGroup = CA2A6FE22930DF42006D8CD7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -358,6 +366,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CA9A9F4A2935368600FC22EA /* XCRemoteSwiftPackageReference "Hero" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HeroTransitions/Hero.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CA9A9F4B2935368600FC22EA /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA9A9F4A2935368600FC22EA /* XCRemoteSwiftPackageReference "Hero" */;
+			productName = Hero;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CA2A6FD92930DF42006D8CD7 /* Project object */;
 }
