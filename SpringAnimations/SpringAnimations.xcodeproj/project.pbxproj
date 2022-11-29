@@ -14,6 +14,7 @@
 		CA2A6FEE2930DF43006D8CD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA2A6FED2930DF43006D8CD7 /* Assets.xcassets */; };
 		CA2A6FF12930DF43006D8CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA2A6FEF2930DF43006D8CD7 /* LaunchScreen.storyboard */; };
 		CA9A9F4C2935368600FC22EA /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CA9A9F4B2935368600FC22EA /* Hero */; };
+		CA9A9F52293605A500FC22EA /* SecondAnimatoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9A9F51293605A500FC22EA /* SecondAnimatoinVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		CA2A6FED2930DF43006D8CD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA2A6FF02930DF43006D8CD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA2A6FF22930DF43006D8CD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA9A9F51293605A500FC22EA /* SecondAnimatoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondAnimatoinVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,15 +60,48 @@
 		CA2A6FE32930DF42006D8CD7 /* SpringAnimations */ = {
 			isa = PBXGroup;
 			children = (
-				CA2A6FE42930DF42006D8CD7 /* AppDelegate.swift */,
-				CA2A6FE62930DF42006D8CD7 /* SceneDelegate.swift */,
-				CA2A6FE82930DF42006D8CD7 /* ViewController.swift */,
-				CA2A6FEA2930DF42006D8CD7 /* Main.storyboard */,
+				CA9A9F4E2936002A00FC22EA /* Model */,
+				CA9A9F4D2936001600FC22EA /* Views */,
+				CA9A9F502936003B00FC22EA /* Controllers */,
+				CA9A9F4F2936003200FC22EA /* App */,
 				CA2A6FED2930DF43006D8CD7 /* Assets.xcassets */,
-				CA2A6FEF2930DF43006D8CD7 /* LaunchScreen.storyboard */,
 				CA2A6FF22930DF43006D8CD7 /* Info.plist */,
 			);
 			path = SpringAnimations;
+			sourceTree = "<group>";
+		};
+		CA9A9F4D2936001600FC22EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CA2A6FEA2930DF42006D8CD7 /* Main.storyboard */,
+				CA2A6FEF2930DF43006D8CD7 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CA9A9F4E2936002A00FC22EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CA9A9F4F2936003200FC22EA /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CA2A6FE42930DF42006D8CD7 /* AppDelegate.swift */,
+				CA2A6FE62930DF42006D8CD7 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CA9A9F502936003B00FC22EA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA2A6FE82930DF42006D8CD7 /* ViewController.swift */,
+				CA9A9F51293605A500FC22EA /* SecondAnimatoinVC.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +184,7 @@
 				CA2A6FE92930DF42006D8CD7 /* ViewController.swift in Sources */,
 				CA2A6FE52930DF42006D8CD7 /* AppDelegate.swift in Sources */,
 				CA2A6FE72930DF42006D8CD7 /* SceneDelegate.swift in Sources */,
+				CA9A9F52293605A500FC22EA /* SecondAnimatoinVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
