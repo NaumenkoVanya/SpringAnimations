@@ -33,19 +33,48 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="buttonOne"/>
                                 </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SHa-Fm-xEa">
+                                <rect key="frame" x="75" y="47" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SHa-Fm-xEa" secondAttribute="height" multiplier="1:1" id="Eb7-g0-s8V"/>
+                                    <constraint firstAttribute="width" constant="240" id="bKX-HJ-VLY"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3w-5c-CUa">
+                                <rect key="frame" x="75" y="47" width="240" height="240"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="ButtonAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rgc-u3-4bj"/>
+                                    <action selector="imageButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mhW-HF-eNd"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.61568629740000003" green="0.61960786580000005" blue="0.62352943419999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="SHa-Fm-xEa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1ek-24-yzs"/>
+                            <constraint firstItem="b3w-5c-CUa" firstAttribute="centerX" secondItem="SHa-Fm-xEa" secondAttribute="centerX" id="5aU-m7-WfH"/>
+                            <constraint firstItem="SHa-Fm-xEa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q5X-AQ-dyj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="87D-eE-4tp" secondAttribute="trailing" constant="16" id="Qwx-AN-8Oq"/>
+                            <constraint firstItem="b3w-5c-CUa" firstAttribute="width" secondItem="SHa-Fm-xEa" secondAttribute="width" id="RkW-1n-9T6"/>
                             <constraint firstItem="87D-eE-4tp" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Whf-tQ-yFR"/>
                             <constraint firstItem="87D-eE-4tp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="XyN-NR-hJ9"/>
+                            <constraint firstItem="b3w-5c-CUa" firstAttribute="centerY" secondItem="SHa-Fm-xEa" secondAttribute="centerY" id="oPQ-js-HRm"/>
+                            <constraint firstItem="b3w-5c-CUa" firstAttribute="height" secondItem="SHa-Fm-xEa" secondAttribute="height" id="ySM-VD-Ign"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="imageView" destination="SHa-Fm-xEa" id="4P8-oS-GCo"/>
+                        <segue destination="xCP-ld-Bgp" kind="presentation" identifier="second" modalPresentationStyle="fullScreen" id="NJO-Aa-XGs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,14 +87,53 @@
                     <view key="view" contentMode="scaleToFill" id="0L1-7S-DJJ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z8t-Mp-ihP">
+                                <rect key="frame" x="0.0" y="47" width="390" height="422"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKB-wz-EEH">
+                                <rect key="frame" x="0.0" y="47" width="77" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="55a-BG-Q7Q"/>
+                                    <constraint firstAttribute="width" constant="77" id="lIE-ku-JCR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <action selector="buttonAction:" destination="xCP-ld-Bgp" eventType="touchUpInside" id="iEq-1z-uEH"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="22g-fa-sch"/>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="22g-fa-sch" firstAttribute="trailing" secondItem="z8t-Mp-ihP" secondAttribute="trailing" id="MDo-3Q-gWy"/>
+                            <constraint firstItem="z8t-Mp-ihP" firstAttribute="leading" secondItem="22g-fa-sch" secondAttribute="leading" id="RO3-q8-fHU"/>
+                            <constraint firstItem="kKB-wz-EEH" firstAttribute="top" secondItem="22g-fa-sch" secondAttribute="top" id="SDM-21-M6Y"/>
+                            <constraint firstItem="z8t-Mp-ihP" firstAttribute="top" secondItem="22g-fa-sch" secondAttribute="top" id="ZNr-js-AcP"/>
+                            <constraint firstItem="z8t-Mp-ihP" firstAttribute="height" secondItem="0L1-7S-DJJ" secondAttribute="height" multiplier="0.5" id="h0d-PR-c3M"/>
+                            <constraint firstItem="kKB-wz-EEH" firstAttribute="leading" secondItem="22g-fa-sch" secondAttribute="leading" id="oWf-V9-tJi"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="2GY-zu-R4v" appends="YES" id="59g-cD-TqL"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="9j8-Pw-0fP"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="secondImage" destination="z8t-Mp-ihP" id="4cM-um-DER"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8s9-KI-sPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="2GY-zu-R4v">
+                    <connections>
+                        <action selector="handlePan:" destination="xCP-ld-Bgp" id="djK-J7-GVn"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="783" y="-230"/>
+            <point key="canvasLocation" x="781.53846153846155" y="-230.33175355450237"/>
         </scene>
     </scenes>
     <resources>

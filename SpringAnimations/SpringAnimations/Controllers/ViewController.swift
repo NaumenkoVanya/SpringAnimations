@@ -10,12 +10,17 @@ import Hero
 
 
 class ViewController: UIViewController {
+
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.heroID = "image"
+        imageView.image = UIImage(named: "foto")
     }
-    @IBAction func ButtonAnimation(_ sender: Any) {
-        
+    
+    @IBAction func imageButtonAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "second", sender: self)
     }
 }
 
