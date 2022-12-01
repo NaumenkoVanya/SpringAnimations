@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pjJ-t3-eE9">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -80,6 +81,53 @@
             </objects>
             <point key="canvasLocation" x="-49" y="-230"/>
         </scene>
+        <!--CollectionVC-->
+        <scene sceneID="9Ia-2O-ERj">
+            <objects>
+                <viewController id="pjJ-t3-eE9" customClass="CollectionVC" customModule="SpringAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nQY-o3-WIO">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jfc-oN-Vrh">
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="gG6-Rc-PCM">
+                                    <size key="itemSize" width="148" height="131"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SMS-Qj-K3s">
+                                        <rect key="frame" x="0.0" y="0.0" width="148" height="131"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jba-op-4ka">
+                                            <rect key="frame" x="0.0" y="0.0" width="148" height="131"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="148" height="131"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8Nq-Ak-3mP"/>
+                        <color key="backgroundColor" red="0.61568629740000003" green="0.61960786580000005" blue="0.62352943419999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="8Nq-Ak-3mP" firstAttribute="trailing" secondItem="Jfc-oN-Vrh" secondAttribute="trailing" id="3xF-6j-jAc"/>
+                            <constraint firstItem="8Nq-Ak-3mP" firstAttribute="bottom" secondItem="Jfc-oN-Vrh" secondAttribute="bottom" id="iDE-CW-dco"/>
+                            <constraint firstItem="Jfc-oN-Vrh" firstAttribute="leading" secondItem="8Nq-Ak-3mP" secondAttribute="leading" id="kZq-z1-zKW"/>
+                            <constraint firstItem="Jfc-oN-Vrh" firstAttribute="top" secondItem="8Nq-Ak-3mP" secondAttribute="top" id="v1W-eT-g5T"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="colletionView" destination="Jfc-oN-Vrh" id="EAI-gy-iws"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y75-9G-JAo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-32.307692307692307" y="539.57345971563984"/>
+        </scene>
         <!--Second AnimatoinVC-->
         <scene sceneID="eeh-gQ-VmU">
             <objects>
@@ -139,6 +187,9 @@
     <resources>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
