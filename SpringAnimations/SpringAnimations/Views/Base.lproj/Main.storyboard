@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="awp-pC-uaC">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -79,6 +80,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-49" y="-230"/>
+        </scene>
+        <!--FotoCVC-->
+        <scene sceneID="nlR-In-enw">
+            <objects>
+                <collectionViewController id="awp-pC-uaC" customClass="FotoCVC" customModule="SpringAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="MQq-0d-hIE">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.61568629740000003" green="0.61960786580000005" blue="0.62352943419999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1c8-8b-p6I">
+                            <size key="itemSize" width="230" height="162"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Leh-tf-pcR">
+                                <rect key="frame" x="80" y="0.0" width="230" height="162"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jE2-P8-lrA" customClass="FotoCVCell" customModule="SpringAnimations" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="230" height="162"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iUH-JG-KLz">
+                                            <rect key="frame" x="0.0" y="8" width="230" height="146"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="iUH-JG-KLz" secondAttribute="bottom" constant="8" id="4oM-dm-IRR"/>
+                                        <constraint firstAttribute="trailing" secondItem="iUH-JG-KLz" secondAttribute="trailing" id="GdR-WM-Lps"/>
+                                        <constraint firstItem="iUH-JG-KLz" firstAttribute="leading" secondItem="jE2-P8-lrA" secondAttribute="leading" id="WKI-GQ-IhH"/>
+                                        <constraint firstItem="iUH-JG-KLz" firstAttribute="top" secondItem="jE2-P8-lrA" secondAttribute="top" constant="8" id="ohA-VQ-UVy"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="230" height="162"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="awp-pC-uaC" id="rCG-si-eRP"/>
+                            <outlet property="delegate" destination="awp-pC-uaC" id="wfD-DR-WG8"/>
+                        </connections>
+                    </collectionView>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="collectionView" destination="Leh-tf-pcR" id="Dbk-Pa-hk2"/>
+                        <outlet property="imageView" destination="iUH-JG-KLz" id="O32-gx-RlU"/>
+                        <segue destination="Azl-XZ-um6" kind="presentation" modalPresentationStyle="fullScreen" id="xho-XV-83C"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LLk-Sa-yf7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49.230769230769226" y="442.89099526066349"/>
+        </scene>
+        <!--DetailsVC View Controller-->
+        <scene sceneID="LyK-x9-wDe">
+            <objects>
+                <viewController id="Azl-XZ-um6" customClass="DetailsVCViewController" customModule="SpringAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZzF-4Y-ydn">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vlh-cV-V4D"/>
+                        <color key="backgroundColor" red="0.61568629740000003" green="0.61960786580000005" blue="0.62352943419999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DPA-2f-Sb6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="782" y="443"/>
         </scene>
         <!--Second AnimatoinVC-->
         <scene sceneID="eeh-gQ-VmU">

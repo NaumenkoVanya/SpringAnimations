@@ -32,11 +32,12 @@ class SecondAnimatoinVC: UIViewController {
             let currenPosition = CGPoint(x: translation.x + secondImage.center.x, y: translation.y + translation.y + secondImage.center.y)
             Hero.shared.apply(modifiers:[.position(currenPosition)], to: secondImage)
         default:
-            if progress > 0.1 {
-                Hero.shared.finish()
-            } else {
-                Hero.shared.cancel()
-            }
+            Hero.shared.finish()
+//            if progress > 0.1 {
+//                Hero.shared.finish()
+//            } else {
+//                Hero.shared.cancel()
+//            }
         }
     }
 }
